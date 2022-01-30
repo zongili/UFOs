@@ -32,7 +32,17 @@ function buildTable(data) {
     );
   });
 }
+// Data-Driven Documents (D3 for short) is a JavaScript library that adds 
+// interactive functionality, such as when users click a button to filter 
+// a table such as filtering the table by date. 
+// It works by "listening" for events, such as a button click, then 
+// reacts according to the code 
+
 function handleClick() {
+  // select the very first element that matches our selector string: 
+  // "#datetime". The selector string is the item we're telling D3.js to look for
+  // we're telling D3 to look for the #datetime id in the HTML tags
+
   // Grab the datetime value from the filter
   let date = d3.select("#datetime").property("value");
   let filteredData = tableData;
