@@ -1,0 +1,11 @@
+body{
+
+    /* light text  */
+    color: #f7f7f7;
+  }
+.jumbotron {
+    background-image: url("C://Users/hulya/Documents/ClassFolder/UFOs/images/nasa.jpg");
+    background-size: 100% 100%;
+    text-align: center;
+  }
+  

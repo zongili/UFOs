@@ -7,6 +7,7 @@ const tableData = data;
 // D3 is a JavaScript library that produces sophisticated and highly dynamic graphics in an HTML webpage
 // 1.	Declare a variable, tbody
 // 2.	Use d3.select to tell JavaScript to look for the <tbody> tags in the HTML
+// 
 var tbody = d3.select("tbody");
 
 // function buildTable:

@@ -19,14 +19,14 @@
     -- It helps group the elements (e.g., title, paragraph, table, 
     -- and filters) and specifies the styling in our stylesheet.-->
         
-    <body>
+    <body class="bg-dark">
         <div class="wrapper">
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
             <a class="navbar-brand" href="index.html">UFO Sightings</a>
             </nav>
         </div>
         <div class="jumbotron">
-            <h1>The Truth Is Out There</h1>
+            <h1 class="display-4">The Truth Is Out There</h1>
         </div>
         <div class="container-fluid">
             <div class="row">
@@ -46,17 +46,17 @@
             <div class="row">
                 <div class="col-md-3">
                     <!-- This is where we'll be accepting user input, so we need to use the HTML-specific field: a form. -->
-                    <form>
+                    <form class="bg-dark">
                         <p>Filter Search</p>
                         <!-- o add these items as cleanly as possible, we're going to create a set of list tags, nested within an unordered list tag. -->
-                        <ul class="list-group">
-                            <li class="list-group-item">
+                        <ul class="list-group bg-dark">
+                            <li class="list-group-item bg-dark">
                                 <label for="date">Enter Date</label>
                                 <input type="text" placeholder="1/10/2010" id="datetime" />
                                 <!-- the id we defined in our JavaScript code (#filter-btn), a type, and a class.
                                     -->
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item bg-dark">
                                 <!-- The type="text" means that the code will look for text to be input.
                                 The placeholder is an example of a date to search, so users know both the 
                                 location and the format to use when inputting a date.
@@ -68,7 +68,7 @@
                                 The class="btn btn-default" attribute adds some Bootstrap styling to the mix to help keep the element neat and tidy. Finally, we've named our button "Filter Table," 
                                 by nesting it between the opening and closing button tags.
                                 -->
-                                <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                                <button id="filter-btn" type="button" class="btn btn-dark">Filter Table</button>
                             
                             </li>
                         </ul>
@@ -88,7 +88,11 @@
                                 <th>Comments</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody display: table-row-group;
+                            vertical-align: middle;
+                            border-color: inherit;>
+
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -97,11 +101,11 @@
             <!-- Adding the link to D3.js allows the library to "listen" 
             or react to user input. For example, if we did not add this 
             link, our d3.select section of code in app.js wouldn't know 
-            where to insert data. We linked todata.js next because the 
+            where to insert data. We linked to data.js next because the 
             UFO sightings data needs to be loaded before it can 
             be accessed, as we do in the app.js script.-->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-            <script src="static/js/data.js"></script>
-            <script src="static/js/app.js"></script>
+            <script src="../UFOs/js/data.js"></script>
+            <script src="../UFOs/js/app.js"></script>
     </body>       
     </html>
