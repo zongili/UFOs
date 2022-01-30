@@ -12,38 +12,96 @@
             href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous"
-         
         />
+        <link rel="stylesheet" href="static/css/style.css">
     </head>
+    <!-- The wrapper class adds a bit of extra functionality to Bootstrap. 
+    -- It helps group the elements (e.g., title, paragraph, table, 
+    -- and filters) and specifies the styling in our stylesheet.-->
+        
     <body>
-        <!-- The wrapper class adds a bit of extra functionality to Bootstrap. 
-        -- It helps group the elements (e.g., title, paragraph, table, 
-        -- and filters) and specifies the styling in our stylesheet.-->
-         
-        <body>
-            <div class="wrapper">
-                <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html">UFO Sightings</a>
-                </nav>
+        <div class="wrapper">
+            <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="index.html">UFO Sightings</a>
+            </nav>
+        </div>
+        <div class="jumbotron">
+            <h1>The Truth Is Out There</h1>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>UFO Sightings: Fact or Fancy? <small>Ufologists Weigh In</small></h3>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        Are we alone in the universe? For millennia, humans have turned to the sky to answer this question. Now, thanks to research generously funded by W. Avy, a UFO-enthusiast and amateur ufologist, we can supplement our sky-searching with data analysis.<br><br>"The release of this analysis is well-timed: It coincides with the celebration of World UFO Day, which is a moment for ufologists around the world to connect, relax, and sample a range of UFO-themed snacks," said Dr. Ursula F. Olivier, the world's preeminent expert on circular sightings. "Citizen-scientists can be especially helpful in both cataloguing sightings—which is hugely helpful for us in our search for aliens—and in helping us celebrate the work that has already been done, such as this data visualization project, which will help us raise awareness of the ubiquity of sightings!"<br><br>Not everyone is ready to celebrate, however. Local CEO and vocal anti-alien activist V. Isualize reached out to our reporters to go on record as firmly opposed to any attempts to provide access to this data. "If there are aliens, they certainly would like to be left alone," she stated, before directing us to the Leave Aliens Alone (LAA) community engagement initiative she founded and funds.<br><br>So what do YOU think? Are we alone in the universe? Are aliens trying to contact us, or do they want to be left alone? Dig through the data yourself, and let us know what you see.
+            
+            
+                    </p>                                
+                </div>        
             </div>
-            <div class="jumbotron">
-                <h1>The Truth Is Out There</h1>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h3>UFO Sightings: Fact or Fancy? <small>Ufologists Weigh In</small></h3>
-                    </div>
-                    <div class="col-md-8">
-                        <p>
-                            Are we alone in the universe? For millennia, humans have turned to the sky to answer this question. Now, thanks to research generously funded by W. Avy, a UFO-enthusiast and amateur ufologist, we can supplement our sky-searching with data analysis.<br><br>"The release of this analysis is well-timed: It coincides with the celebration of World UFO Day, which is a moment for ufologists around the world to connect, relax, and sample a range of UFO-themed snacks," said Dr. Ursula F. Olivier, the world's preeminent expert on circular sightings. "Citizen-scientists can be especially helpful in both cataloguing sightings—which is hugely helpful for us in our search for aliens—and in helping us celebrate the work that has already been done, such as this data visualization project, which will help us raise awareness of the ubiquity of sightings!"<br><br>Not everyone is ready to celebrate, however. Local CEO and vocal anti-alien activist V. Isualize reached out to our reporters to go on record as firmly opposed to any attempts to provide access to this data. "If there are aliens, they certainly would like to be left alone," she stated, before directing us to the Leave Aliens Alone (LAA) community engagement initiative she founded and funds.<br><br>So what do YOU think? Are we alone in the universe? Are aliens trying to contact us, or do they want to be left alone? Dig through the data yourself, and let us know what you see.
-                
-                
-                            </p>                                
-                    </div>        
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- This is where we'll be accepting user input, so we need to use the HTML-specific field: a form. -->
+                    <form>
+                        <p>Filter Search</p>
+                        <!-- o add these items as cleanly as possible, we're going to create a set of list tags, nested within an unordered list tag. -->
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <label for="date">Enter Date</label>
+                                <input type="text" placeholder="1/10/2010" id="datetime" />
+                                <!-- the id we defined in our JavaScript code (#filter-btn), a type, and a class.
+                                    -->
+                            </li>
+                            <li class="list-group-item">
+                                <!-- The type="text" means that the code will look for text to be input.
+                                The placeholder is an example of a date to search, so users know both the 
+                                location and the format to use when inputting a date.
+                                The id="datetime" is what our JavaScript code will look for when the button is 
+                                clicked and the function is executed.
+                                When the button is clicked, the input from earlier is picked up by our JavaScript code and then applied to the filter.
+                                type="button" tells the browser that, by default, the button does nothing. However, our custom JavaScript script will 
+                                overwrite the default behavior—as if the button is waiting for instruction.
+                                The class="btn btn-default" attribute adds some Bootstrap styling to the mix to help keep the element neat and tidy. Finally, we've named our button "Filter Table," 
+                                by nesting it between the opening and closing button tags.
+                                -->
+                                <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                            
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <div class="col-md-9">
+                    <!-- Bootstrap styling  -->
+                    <table class="table table-striped"> 
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Country</th>
+                                <th>Shape</th>
+                                <th>Duration</th>
+                                <th>Comments</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
             </div>
-        </body>       
-    </body>
-    <link rel="stylesheet" href="static/css/style.css">
+        </div>
+            <!-- add the scripts in the order, the order matters -->
+            <!-- Adding the link to D3.js allows the library to "listen" 
+            or react to user input. For example, if we did not add this 
+            link, our d3.select section of code in app.js wouldn't know 
+            where to insert data. We linked todata.js next because the 
+            UFO sightings data needs to be loaded before it can 
+            be accessed, as we do in the app.js script.-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+            <script src="static/js/data.js"></script>
+            <script src="static/js/app.js"></script>
+    </body>       
     </html>
