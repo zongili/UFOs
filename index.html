@@ -48,28 +48,29 @@
                     <!-- This is where we'll be accepting user input, so we need to use the HTML-specific field: a form. -->
                     <form class="bg-dark">
                         <p>Filter Search</p>
-                        <!-- o add these items as cleanly as possible, we're going to create a set of list tags, nested within an unordered list tag. -->
+                        <!-- add these items as cleanly as possible, we're going to create a set of list tags, nested within an unordered list tag. -->
                         <ul class="list-group bg-dark">
                             <li class="list-group-item bg-dark">
                                 <label for="date">Enter Date</label>
                                 <input type="text" placeholder="1/10/2010" id="datetime" />
+                            </li>
                                 <!-- the id we defined in our JavaScript code (#filter-btn), a type, and a class.
                                     -->
+                            <li class="list-group-item bg-dark">
+                                <label for="city">Enter a City</label>
+                                <input type="text" placeholder="rosewell"id="city"/>
                             </li>
                             <li class="list-group-item bg-dark">
-                                <!-- The type="text" means that the code will look for text to be input.
-                                The placeholder is an example of a date to search, so users know both the 
-                                location and the format to use when inputting a date.
-                                The id="datetime" is what our JavaScript code will look for when the button is 
-                                clicked and the function is executed.
-                                When the button is clicked, the input from earlier is picked up by our JavaScript code and then applied to the filter.
-                                type="button" tells the browser that, by default, the button does nothing. However, our custom JavaScript script will 
-                                overwrite the default behavior—as if the button is waiting for instruction.
-                                The class="btn btn-default" attribute adds some Bootstrap styling to the mix to help keep the element neat and tidy. Finally, we've named our button "Filter Table," 
-                                by nesting it between the opening and closing button tags.
-                                -->
-                                <button id="filter-btn" type="button" class="btn btn-dark">Filter Table</button>
-                            
+                                <label for="state">Enter a State</label>
+                                <input type="text" placeholder="ca" id="state"/>
+                            </li>
+                            <li class="list-group-item bg-dark">
+                                <label for="country">Enter a Country</label>
+                                <input type="text" placeholder="us" id="country"/>
+                            </li>
+                            <li class="list-group-item bg-dark">
+                                <label for="shape">Enter a Shape</label>
+                                <input type="text" placeholder="circle" id="shape"/>
                             </li>
                         </ul>
                     </form>
@@ -91,19 +92,11 @@
                         <tbody display: table-row-group;
                             vertical-align: middle;
                             border-color: inherit;>
-
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-            <!-- add the scripts in the order, the order matters -->
-            <!-- Adding the link to D3.js allows the library to "listen" 
-            or react to user input. For example, if we did not add this 
-            link, our d3.select section of code in app.js wouldn't know 
-            where to insert data. We linked to data.js next because the 
-            UFO sightings data needs to be loaded before it can 
-            be accessed, as we do in the app.js script.-->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
             <script src="../UFOs/js/data.js"></script>
             <script src="../UFOs/js/app.js"></script>
